@@ -28,17 +28,20 @@ public void WhenProjectStartedIsActive()
 {
     //Arrange
     Project project = new Project();
+    DateTime startTime = DateTime.Now;
     //Act
-    project.Start();
+    project.Start(startTime);
     //Assert
     Assert.IsTrue(project.IsActive);
 }
 ```
-With our new test created, go ahead and run all of the tests. Of course our newest one will fail. THIS IS GOOD! We want to start in the "Red" phase.  
-Remember, we want our test to lead to the design of our application. Based on our test, we know we need to:
-*Create a project object
-*Create a start method
-*Create and set a IsActive property
+With our new test created, we now need to create just enough of the project class to get everything to build. We are not trying to get a passing test here, just enough to build successfully. 
+Remember, we want our test to lead to the design of our application. Based on our test, we know we need to: 
+
+* Create a project object
+* Create a start method  
+* Create an IsActive property  
+
 Lets go ahead and create our project class now.
 ```c#
 namespace TDDMiniHack
@@ -47,16 +50,34 @@ namespace TDDMiniHack
     {
         public bool IsActive { get; set; }
 
-        public void Start()
+        public void Start(DateTime startTime)
         {
-            IsActive = true;
+            
         }
     }
 }
 ```
 *Don't forget to add a reference from our main project to the test project so our tests know about our new project class*
 
-Now that we have our project class created, lets go ahead and run all of our tests again. If you copy/pasted everything correctly, all the test should be green. Good job! We are now in the "Green" phase.
+Now that our application will build, lets go ahead and run all of our tests. Our new test should fail; THIS IS GOOD! This is the "Red" phase.  
+Our next step is to get our test to pass, or the "Green" phase. From the test we have written, we know we are checking to see if our project is active. Knowing this, lets update our project class so our test will pass:
+
+```c#
+namespace TDDMiniHack
+{
+    public class Project
+    {
+        public bool IsActive { get; set; }
+
+        public void Start(DateTime startTime)
+        {
+            IsActive = true;
+        }
+    }
+}
+```
+
+Now lets go back and run all of our tests again. If you have set everything up correctly, all of our tests should now be passing! Great job, we are now in the "Green" phase.
 
 3) Our next phase is the "Refactor" phase. We want to be able to check the duration of our projects. We will need to refactor our project class to do this. However, we won't start in the project class. We start in our test project again.
 ```c#

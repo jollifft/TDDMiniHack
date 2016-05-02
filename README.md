@@ -79,7 +79,7 @@ namespace TDDMiniHack
 
 Now lets go back and run all of our tests again. If you have set everything up correctly, all of our tests should now be passing! Great job, we are now in the "Green" phase.
 
-3) Our next phase is the "Refactor" phase. We want to be able to check the duration of our projects. We will need to refactor our project class to do this. However, we won't start in the project class. We start in our test project again.
+3) Lets go ahead and create a new test. We want to be able to check the duration of our projects. Again, we won't start in the project class. We want start in our test project like last time.
 ```c#
 [Test]
 public void ProjectHasDuration()
@@ -96,7 +96,7 @@ public void ProjectHasDuration()
     Assert.AreEqual(60, project.Duration);
 }
 ```
-Now that we have our test, lets fix our build errors by implementing our missing logic. Keep in mind, we are only **refactoring** here, so we only want to add enough code to get rid of our build errors. 
+Now that we have our test, we can start the "Refactor" phase. Lets fix our build errors by implementing our missing logic. Keep in mind, we are only **refactoring** here, so we only want to add enough code to get rid of our build errors. 
 
 Our project class should now look like this:
 ```c#
@@ -104,11 +104,6 @@ public class Project
 {
     public bool IsActive { get; set; }
     public double Duration { get; }
-
-    public void Start()
-    {
-        IsActive = true;
-    }
 
     public void Start(DateTime startTime)
     {
@@ -122,7 +117,7 @@ public class Project
 }
 ```
 
-4) Now that we have refactored, it's time for the "Red" phase again. Go ahead and run all of our tests again. The test we wrote in the last step should now fail. Again, this is good. Based off our our test method and how we have our project class set up, it should be easy to see what logic we are missing and where to add it. Lets update our project class now:
+Now that we have refactored, it's time for the "Red" phase again. Go ahead and run all of our tests again. The test we wrote should now fail. Again, this is good. Based off our our test method and how we have our project class set up, it should be easy to see what logic we are missing and where to add it. Lets update our project class now:
 ```c#
  public class Project
 {
@@ -133,11 +128,6 @@ public class Project
     }
     private DateTime _startTime;
     private DateTime _endTime;
-
-    public void Start()
-    {
-        IsActive = true;
-    }
 
     public void Start(DateTime startTime)
     {
@@ -151,3 +141,7 @@ public class Project
     }
 }
 ```
+
+Now that we have updated our project class, lets go ahead and run all of our test. If done correctly, all of our tests should now be passing!
+
+4) 

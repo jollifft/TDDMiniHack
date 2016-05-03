@@ -1,5 +1,7 @@
 # TDDMiniHack
-A quick and dirty intro into the wild and wonderful world of test driven development.
+A quick and dirty intro into the wild and wonderful world of test driven development.  
+
+__If you would like to do this mini-hack, please either fork this example to your own repo, or just download the zip of this. This will keep the master branch clean and unaltered and allow others in the furture to try this mini-hack too!__ :wink:
 
 ##Intro  
 ####The Basics
@@ -28,8 +30,15 @@ The main principle to remember with TDD is __FIRST__:
 
 You can find more information around FIRST here: https://pragprog.com/magazines/2012-01/unit-tests-are-first 
 
-Talk about red green refactor  
-In our application, we know we want to track projects, and how long it has taken the project to go from start to finish. 
+The second main principle to remember with TDD is __Red -> Green -> Refactor__.
+* __Red__: Each test you write should start out failing.
+* __Green__: Just enough application code is added for test to pass.
+* __Refactor__: Clean up code to optimize and make project more readable 
+![alt-text](https://s3.amazonaws.com/media-p.slid.es/uploads/jlopezmo/images/587930/tdd-circle-of-life.png)  
+You can find more information at http://www.jamesshore.com/Blog/Red-Green-Refactor.html  
+
+####Enough talk, lets code already!
+In our example, we will be creating an application that tracks "projects", and the duration of a project. The basic starting point for the application is include here, and the steps to follow are posted below.  
 
 ##Steps
 1) Our first step will be to set up a "Must Pass" test. This is mainly just a sanity check to make sure we are starting out on the right foot with testing. In the test project, lets add our first test...

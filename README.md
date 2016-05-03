@@ -112,7 +112,8 @@ namespace TDDMiniHack
 }
 ```
 
-Now lets go back and run all of our tests again. If you have set everything up correctly, all of our tests should now be passing! Great job, we are now in the "Green" phase.
+Now lets go back and run all of our tests again. If you have set everything up correctly, all of our tests should now be passing! Great job, we are now in the "Green" phase.  
+Our next phase would be to refactor. However, since this is still a fairly simple example, there is no refactoring needed. If there is any code you would like to clean up though, now is the time! 
 
 3) Lets go ahead and create a new test. We want to be able to check the duration of our projects. Again, we won't start in the project class. We want start in our test project like last time.
 ```c#
@@ -131,7 +132,7 @@ public void ProjectHasDuration()
     Assert.AreEqual(60, project.Duration);
 }
 ```
-Now that we have our test, we can start the "Refactor" phase. Lets fix our build errors by implementing our missing logic. Keep in mind, we are only **refactoring** here, so we only want to add enough code to get rid of our build errors. 
+Now that we have our test, we should be seeing some errors. Lets fix our build errors by implementing our missing logic. Keep in mind we only want to add enough code to get rid of our build errors. 
 
 Our project class should now look like this:
 ```c#
@@ -152,7 +153,7 @@ public class Project
 }
 ```
 
-Now that we have refactored, it's time for the "Red" phase again. Go ahead and run all of our tests again. The test we wrote should now fail. Again, this is good. Based off our our test method and how we have our project class set up, it should be easy to see what logic we are missing and where to add it. Lets update our project class now:
+Now that we have resolved our errors, it's time for the "Red" phase again. Go ahead and run all of our tests again. The test we wrote should now fail. Again, this is good. Based off our our test method and how we have our project class set up, it should be easy to see what logic we are missing and where to add it. Lets update our project class now:
 ```c#
  public class Project
 {
@@ -177,7 +178,7 @@ Now that we have refactored, it's time for the "Red" phase again. Go ahead and r
 }
 ```
 
-Now that we have updated our project class, lets go ahead and run all of our test. If done correctly, all of our tests should now be passing!
+Now that we have updated our project class, lets go ahead and run all of our test. If done correctly, all of our tests should now be passing! Our project is still fairly simple, so there isn't much room for refactoring. Refactor as you see fit.
 
 4) Let's finish up with one final test. In this test, we want to make sure we can start and stop a project multiple times and that the duration works correctly.  
 As before, we will start by creating our test:
@@ -205,7 +206,7 @@ public void ProjectCanStartAndStopAndHasDuration()
     Assert.AreEqual(60+120+360, project.Duration);
 }
 ```
-Our next step would be the "Rafactor" phase, however, our current implementation of our project class should allow the project to build. So lets go ahead and run our new test. As you can see, our test will fail, putting us in the "Red" phase. Our test is failing because our Duration property is being reset each time. Lets update our code to take care of this.   
+Lets go ahead and run our new test. As you can see, our test will fail, putting us in the "Red" phase. Our test is failing because our Duration property is being reset each time. Lets update our code to take care of this.   
 
 We'll start by creating a new class named "Segment". Our project class will keep a list of different project segments. Our Segment class will look like this:
 ```c#
@@ -264,4 +265,6 @@ public class Project
 ```
 Our "Project" class now lets the "Segment" class handle keeping track of the start and end times. Our "Project" class now keeps track of the active segment, starting a new one each time the project is started, and ending and adding the segment to a list each time the project is ended. Also, notice that we have updated our getter for the duration property to correctly add up the total duration of each segment.  
 
-Go ahead and run all of our tests again. If done correctly, all of our tests should now be passing, putting us back at the "Green" phase!
+Go ahead and run all of our tests again. If done correctly, all of our tests should now be passing, putting us back at the "Green" phase! Again, now is the time you should refactor as you see fit. 
+
+

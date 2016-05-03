@@ -41,6 +41,9 @@ You can find more information at http://www.jamesshore.com/Blog/Red-Green-Refact
 In our example, we will be creating an application that tracks "projects", and the duration of a project. The basic starting point for the application is include here, and the steps to follow are posted below.  
 
 ##Steps
+0) This example uses Nunit for testing. In Visual studio, if you have Resharper installed, you can use the built in Resharper testing tools to run the tests. If you do not have Resharper installed, you can install the Nunit test adapter.  
+Right click the test project -> manage nuget packages -> search "nunit" -> NUnitTestAdapter -> Install  
+
 1) Our first step will be to set up a "Must Pass" test. This is mainly just a sanity check to make sure we are starting out on the right foot with testing. In the test project, lets add our first test...
 ```c#
 [Test]

@@ -1,7 +1,33 @@
 # TDDMiniHack
 A quick and dirty intro into the wild and wonderful world of test driven development.
 
-##Intro
+##Intro  
+####The Basics
+In short, Test Driven Development drives the design of your application. Your tests should be written **before** your code, and the code should implement the design of your tests. For those that are not familiar with TDD, this can be a weird feeling at first.  
+
+The key differences between Unit Testing and Test Driven Development is:  
+* Tests are written after the code in **Unit Testing**  
+* Tests are written before the code in **TDD**  
+
+*This can be a little bit confusing as __Unit Testing__ includes unit tests, but these are two different things.*
+
+Some basic guidelines for TDD are:
+* no code until you have a failing test
+* tests should only test one thing
+* just enough test code to test that one thing
+* only enough application code to pass the test
+* generally, only one assert per test
+
+####Principles of Testing
+The main principle to remember with TDD is __FIRST__:
+* __FAST__: Tests should be fast. The faster they are, the more you will run them.
+* __ISOLATED__: Tests should be independent of each other. They should be able to run in any order.
+* __REPEATABLE__: You should get the same result for every N times you run your test.
+* __SELF-VERIFYING__: Tests should be unambiguous. No human interaction should be required.
+* __TIMELY__: Tests should be written before your code (or at the same time with __Unit Testing__).
+
+You can find more information around FIRST here: https://pragprog.com/magazines/2012-01/unit-tests-are-first 
+
 Talk about red green refactor  
 In our application, we know we want to track projects, and how long it has taken the project to go from start to finish. 
 

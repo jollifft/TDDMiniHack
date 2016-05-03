@@ -267,4 +267,11 @@ Our "Project" class now lets the "Segment" class handle keeping track of the sta
 
 Go ahead and run all of our tests again. If done correctly, all of our tests should now be passing, putting us back at the "Green" phase! Again, now is the time you should refactor as you see fit. 
 
+##Conclusion
+Congrats! You have now started down the path to becoming a great Test Driven Developer. Some of the key take-aways from this should be:
+* Tests first, code second
+* Only enough code to complete the test at hand
+* Red -> Green -> Refactor
+* FIRST principle 
 
+If you find any errors in this mini-hack or have any suggestions, feel free to create a pull request!! Feedback is welcomed!

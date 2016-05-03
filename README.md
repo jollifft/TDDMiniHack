@@ -144,4 +144,89 @@ Now that we have refactored, it's time for the "Red" phase again. Go ahead and r
 
 Now that we have updated our project class, lets go ahead and run all of our test. If done correctly, all of our tests should now be passing!
 
-4) 
+4) Let's finish up with one final test. In this test, we want to make sure we can start and stop a project multiple times and that the duration works correctly.  
+As before, we will start by creating our test:
+```c#
+[Test]
+public void ProjectCanStartAndStopAndHasDuration()
+{
+    //Arrange
+    Project project = new Project();
+    DateTime startTime = DateTime.Now;
+
+    //Act
+
+    //one minute
+    project.Start(startTime);
+    project.End(startTime.AddSeconds(60));
+    //two minutes
+    project.Start(startTime.AddSeconds(120));
+    project.End(startTime.AddSeconds(240));
+    //three minutes
+    project.Start(startTime.AddSeconds(300));
+    project.End(startTime.AddSeconds(660));
+
+    //Assert
+    Assert.AreEqual(60+120+360, project.Duration);
+}
+```
+Our next step would be the "Rafactor" phase, however, our current implementation of our project class should allow the project to build. So lets go ahead and run our new test. As you can see, our test will fail, putting us in the "Red" phase. Our test is failing because our Duration property is being reset each time. Lets update our code to take care of this.   
+
+We'll start by creating a new class named "Segment". Our project class will keep a list of different project segments. Our Segment class will look like this:
+```c#
+public class Segment
+{
+    public DateTime StartTime { get; set; }
+    public DateTime EndTime { get; set; }
+
+    public void Start(DateTime startTime)
+    {
+        StartTime = startTime;
+    }
+
+    public void End(DateTime endTime)
+    {
+        EndTime = endTime;
+    }
+}
+```
+Now we have a way to keep track of the start and end times of different segments for each project. With that done, lets update our "Project" class to use our new segments. 
+```c#
+public class Project
+{
+    public IList<Segment> Segments = new List<Segment>();
+    private Segment _activeSegment;
+
+    public bool IsActive { get; set; }
+    public double Duration
+    {
+        get
+        {
+            double totalDuration = 0;
+            foreach (var segment in Segments)
+            {
+                totalDuration += (segment.EndTime - segment.StartTime).TotalSeconds;
+            }
+            return totalDuration;
+        }
+    }
+    
+
+    public void Start(DateTime startTime)
+    {
+        _activeSegment = new Segment();
+        _activeSegment.Start(startTime);
+
+        IsActive = true;
+    }
+
+    public void End(DateTime endTime)
+    {
+        _activeSegment.End(endTime);
+        Segments.Add(_activeSegment);
+    }
+}
+```
+Our "Project" class now lets the "Segment" class handle keeping track of the start and end times. Our "Project" class now keeps track of the active segment, starting a new one each time the project is started, and ending and adding the segment to a list each time the project is ended. Also, notice that we have updated our getter for the duration property to correctly add up the total duration of each segment.  
+
+Go ahead and run all of our tests again. If done correctly, all of our tests should now be passing, putting us back at the "Green" phase!

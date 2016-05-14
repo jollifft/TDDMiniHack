@@ -270,6 +270,21 @@ Our "Project" class now lets the "Segment" class handle keeping track of the sta
 
 Go ahead and run all of our tests again. If done correctly, all of our tests should now be passing, putting us back at the "Green" phase! Again, now is the time you should refactor as you see fit. 
 
+####On your own
+
+5) Now that you have a better understanding of TDD, lets try creating a few more tests on your own. In this one, we want to test that we can add team members to a project, and that we can get the total number of team members after they have been added.
+
+As before, we will start by creating our test method. It should include the following:
+* A name that is meaningful to what we are testing (i.e. CanAddTeamMembersToProject...)
+* Adds some team members to a project
+* Asserts that the correct number of team members are included in the project  
+
+If you need a little help setting this up, you can find an example here.
+
+Next, we need to update our code just enough to get it to build (this is the red phase). Once it builds, go ahead and run your test to make sure we are in the red phase. Again, if you need some help, you can see an example here.
+
+Finally, lets go ahead and update our code to correctly add and return the correct number of team members. Once you have everything set up, go ahead and run your test. We should now be in the green phase. Go ahead and refactor anything you think could use some love. You can find an example of the completed code here.
+
 ##Conclusion
 Congrats! You have now started down the path to becoming a great Test Driven Developer. Some of the key take-aways from this should be:
 * Tests first, code second

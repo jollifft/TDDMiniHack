@@ -279,11 +279,11 @@ As before, we will start by creating our test method. It should include the foll
 * Adds some team members to a project
 * Asserts that the correct number of team members are included in the project  
 
-If you need a little help setting this up, you can find an example here.
+If you need a little help setting this up, you can find an example [here](../master/Hints/Step_5_Test.md)
 
-Next, we need to update our code just enough to get it to build (this is the red phase). Once it builds, go ahead and run your test to make sure we are in the red phase. Again, if you need some help, you can see an example here.
+Next, we need to update our code just enough to get it to build (this is the red phase). Once it builds, go ahead and run your test to make sure we are in the red phase. Again, if you need some help, you can see an example [here](../master/Hints/Step_5_Red.md)
 
-Finally, lets go ahead and update our code to correctly add and return the correct number of team members. Once you have everything set up, go ahead and run your test. We should now be in the green phase. Go ahead and refactor anything you think could use some love. You can find an example of the completed code here.
+Finally, lets go ahead and update our code to correctly add and return the correct number of team members. Once you have everything set up, go ahead and run your test. We should now be in the green phase. Go ahead and refactor anything you think could use some love. You can find an example of the completed code [here](../master/Hints/Step_5_Green.md)
 
 ##Conclusion
 Congrats! You have now started down the path to becoming a great Test Driven Developer. Some of the key take-aways from this should be:

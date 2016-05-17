@@ -287,13 +287,13 @@ Finally, lets go ahead and update our code to correctly add and return the corre
 
 6) For our last example, we want to be able to add hours worked to different team members (i.e. CanAssignTimeToTeamMember...)
 
-Start out by creating a test method. We want to test creating a new team member, and then adding hours that they worked. If you need help, you can find an example here
+Start out by creating a test method. We want to test creating a new team member, and then adding hours that they worked. If you need help, you can find an example [here](../master/Hints/Step_6_Test.md)
 
-Next, add just enough code so that our code will successfully build. Once you have a successful build, this will put us in the red phase. If you need help, you can find an example here. (Hint: a new class might be helpful...)
+Next, add just enough code so that our code will successfully build. Once you have a successful build, this will put us in the red phase. If you need help, you can find an example [here](../master/Hints/Step_6_Red.md) (Hint: a new class might be helpful...)
 
-Finally, lets go ahead and add the missing logic. Once you have it added, go ahead and run the test again. We should now have a passing test, putting us in the green phase. If you need help, you can find the completed code here
+Finally, lets go ahead and add the missing logic. Once you have it added, go ahead and run the test again. We should now have a passing test, putting us in the green phase. If you need help, you can find the completed code [here](../master/Hints/Step_6_Green.md)
 
-**NOTE:**Depending on how you implemented the last test, there's a good chance that our test from example 5 is now failing. This is a great example of the refactor stage. Go ahead and refactor the project class to work with the new team members implementation that we now have. If you need some help, you can find the updated project class here.
+**NOTE:**Depending on how you implemented the last test, there's a good chance that our test from example 5 is now failing. This is a great example of the refactor stage. Go ahead and refactor the project class to work with the new team members implementation that we now have. If you need some help, you can find the updated project class [here](../master/Hints/Step_6_Refactor.md).
 
 ##Conclusion
 Congrats! You have now started down the path to becoming a great Test Driven Developer. Some of the key take-aways from this should be:

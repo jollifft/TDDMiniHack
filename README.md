@@ -41,6 +41,9 @@ You can find more information at http://www.jamesshore.com/Blog/Red-Green-Refact
 In our example, we will be creating an application that tracks "projects", and the duration of a project. The basic starting point for the application is include here, and the steps to follow are posted below.  
 
 ##Steps
+**Project Overview:**    
+Our goal is to create an application that we can use to track "projects", and some related properties to a project (such as whether it is active, how much time has been spent on the project, etc.)
+
 0) This example uses Nunit for testing. In Visual studio, if you have Resharper installed, you can use the built in Resharper testing tools to run the tests. If you do not have Resharper installed, you can install the Nunit test adapter.  
 Right click the test project -> manage nuget packages -> search "nunit" -> NUnitTestAdapter -> Install  
 
